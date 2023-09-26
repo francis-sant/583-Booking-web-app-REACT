@@ -1,0 +1,48 @@
+.insertForm {
+    background: #005670;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 645px;
+    font-size: 18px;
+    color: #fff;
+}
+
+ label {
+    margin-bottom: 10px;
+}
+
+.insertForm form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+  
+  }
+
+  .insertForm input {
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  button {
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid #a4fcc6;
+    background-color: rgb(0, 86, 112);
+    color: #a4fcc6;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #a4fcc6;
+      color: rgb(0, 86, 112);
+    }
+  }

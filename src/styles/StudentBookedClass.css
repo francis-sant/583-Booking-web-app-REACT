@@ -1,0 +1,23 @@
+.studentsinfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+
+
+  .studentdetails {
+    width: 90%;
+    margin: 10px;
+    color: #080808;
+    background-color: rgb(255 255 255);
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;  
+  }
+
+  .studentdetails p{
+    font-weight: 500;
+  }

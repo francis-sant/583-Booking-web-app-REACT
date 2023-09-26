@@ -1,0 +1,31 @@
+
+h2{
+    font-size: 28px;
+text-align: center;
+padding: 10px;
+color: #005670;
+}
+
+.myclassesdisplay {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.classesDisplay {
+  width: 400px;
+  margin: 10px;
+  color: #0a0a0a;
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 20px;
+  text-align: center;
+  }
+
+  .schedule ul {
+    display: contents;
+    list-style: none;
+    margin: auto;
+  
+  }

@@ -1,0 +1,29 @@
+.time-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .time-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+
+  .time-options div{
+    
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-radius: 5px;
+    font-weight: 500;
+  }
+  
+  .active-time {
+    background-color: #00c54c;
+  }

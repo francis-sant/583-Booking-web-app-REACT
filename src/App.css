@@ -1,3 +1,9 @@
+body{
+  margin: 0;
+padding: 0;
+background-color: #ebdb04;
+}
+
 .App {
   text-align: center;
 }
@@ -6,6 +12,24 @@
   height: 40vmin;
   pointer-events: none;
 }
+
+nav {
+  padding: 30px;
+  background-color: #005670;
+  text-align: center;
+}
+
+nav a {
+  font-weight: bold;
+  color: #42b983;
+ 
+}
+nav a:active {
+  color: #ffffff;
+}
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -27,6 +51,19 @@
 .App-link {
   color: #61dafb;
 }
+
+.navhome {
+  padding: 30px;
+  color: #ffffff;
+  background-color: #005670;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+
+
 
 @keyframes App-logo-spin {
   from {

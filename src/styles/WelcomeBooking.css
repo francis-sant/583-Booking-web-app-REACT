@@ -1,0 +1,45 @@
+.home {
+  padding: 200px 0;
+  margin: auto;
+  max-width: 400px;
+}
+
+.homedesign {
+    background: #fdfdfd;
+    padding: 20px 0;
+  
+  }
+
+  
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(0, 86, 112);
+    padding: 3px;
+  }
+
+  .homeauthentic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  
+  }
+
+  .homeauthentic button {
+    margin: 10px;
+    padding: 10px;
+    border: 3px solid #a4fcc6;
+    background-color: rgb(0, 86, 112);
+    color: #a4fcc6;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .homeauthentic button:hover {
+    background-color: #a4fcc6;
+    color: rgb(0, 86, 112);
+  }

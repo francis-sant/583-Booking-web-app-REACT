@@ -1,0 +1,20 @@
+.editform{
+    display: flex;
+    align-items: center;
+  }
+
+  .editform form {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .editform form 
+  input {
+    padding: 15px;
+    border-radius: 20px;
+    margin: 10px;
+  }
+
+ 
