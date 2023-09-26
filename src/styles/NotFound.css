@@ -1,0 +1,49 @@
+/* NotFound.css */
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap");
+
+
+.nfcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; 
+    font-family: "Comic Neue", cursive;
+  }
+  
+  .nfcontent {
+    text-align: center;
+  }
+  
+ .nfcontent h1 {
+    
+    font-size: 3rem;
+    color: #333; 
+  }
+  
+  .nfcontent p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .error-image img {
+    max-width: 100%;
+    height: auto;
+    
+  }
+  
+
+  .gobackbutton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff5722;
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gobackbutton:hover {
+    background-color: #ff4500; 
+}

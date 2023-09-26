@@ -1,0 +1,75 @@
+.personalinfo {
+    background: #005670;
+    color: #a4fcc6;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.personalinfo h2{
+    color: white;
+}
+
+
+.personalForm {
+    padding: 20px;
+    display: grid;
+    margin: auto;
+    min-width: 300px;
+    max-width: 500px;
+  }
+
+  .personalForm  input {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+
+  .personalinfo button {
+    margin: 10px auto;
+    padding: 13px;
+    border: 3px solid #a4fcc6;
+    background-color: rgb(0, 86, 112);
+    color: #a4fcc6;
+    font-size: 20px;
+    font-weight: bold;
+    width: 222px;
+
+    background-color: #333;
+    border-color: #666;
+    color: #666;
+    cursor: not-allowed;
+
+    &:enabled {
+      background-color: rgb(0, 86, 112);
+      border-color: #a4fcc6;
+      color: #a4fcc6;
+      cursor: pointer;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .personalinfo {
+      font-size: 16px;
+    }
+
+    .personalForm {
+      padding: 10px;
+      min-width: unset;
+      max-width: 100%;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 18px;
+    }
+  }

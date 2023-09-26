@@ -9,10 +9,10 @@ function StudentBooking() {
   return (
     <div className="bookingclass">
       <h2>My Classes</h2>
-      <div className="myclasses">
+      
         <StudentFormsField />
         
-      </div>
+    
 
      
     </div>

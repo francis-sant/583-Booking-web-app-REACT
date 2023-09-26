@@ -68,9 +68,10 @@ function StudentFormsField() {
         );
   
         if (response.ok) {
+          setValidationMessage("Booking request successful");
           setBookingDetails(combinedBookingDetails); 
           setBookingConfirmed(true);
-          validationMessage("Booking request successful");
+
           resetFields();
           console.log('Booking request successful');
           
@@ -124,17 +125,13 @@ function StudentFormsField() {
     }
 
     // Check booking availability
-    const bookingAvailability = checkBookingAvailability(
+    checkBookingAvailability(
       selectedClass,
       selectedDate,
       selectedTime
     );
 
-    if (bookingAvailability.isAlreadyBooked) {
-      setValidationMessage(bookingAvailability.validationMessage);
-    } else {
-      setValidationMessage('testing');
-    }
+  
   };
 
   function checkBookingAvailability(selectedClass, selectedDate, selectedTime) {
@@ -194,9 +191,12 @@ function StudentFormsField() {
   };
 
 
-  
+
 
   return (
+    <>
+    <div className="myclasses">
+
     <div className="dropdown">
       <DropdownItem
         label="Choose a Class:"
@@ -223,18 +223,19 @@ function StudentFormsField() {
         bookedClasses={bookedClasses}
         classTimes={selectedClassDataTIME}
       />
-
+    </div>
+    </div>
       <div className="validation-message">{validationMessage}</div>
 
-      <button onClick={resetFields}>Reset</button>
+      <button id="reset" onClick={resetFields}>Reset My Booking</button>
 
       {selectedClass ? <ClassInfo classtoDisplay={classtoDisplay}/> : null }
 
       <PersonalInfo onBookingConfirmed={sendBooking} />
 
       {bookingConfirmed && <BookingConfirmation bookingDetails={bookingDetails} />}
-      
-    </div>
+     
+      </>
   );
 }
 

@@ -157,12 +157,14 @@ function TeacherForm() {
 
         <button type="submit">Add My Service</button>
 
-        {successMessage ? (
+        
+      </form>
+
+      {successMessage ? (
           <div className="successMessage">{successMessage}</div>
         ) : (
           <div>{failMessage}</div>
         )}
-      </form>
     </div>
   );
 }

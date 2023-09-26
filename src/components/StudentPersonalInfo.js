@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/StudentPersonalInfo.css';
 
 function PersonalInfo({ onBookingConfirmed }) {
   const [firstName, setFirstName] = useState('');
@@ -56,6 +57,7 @@ function PersonalInfo({ onBookingConfirmed }) {
         <label htmlFor="email">Email:</label>
         <input
           id="email"
+          type='email'
           value={email}
           onChange={(student) => setEmail(student.target.value)}
           required

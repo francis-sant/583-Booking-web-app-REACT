@@ -6,21 +6,29 @@ import '../App.css';
 const Navbar = () => {
   const userRole = useSelector((state) => state.auth.role);
 
+  if (!userRole) {
+   return  null;
+   }   
+  
+
+
   return (
     <nav className="navhome">
       <a href="/">Home</a>
 
       {userRole === 'student' && ( 
         <>
-          <Link to="/student/booking">Book my Class</Link>
-          <Link to="/student/reschedule">My Booked Classes</Link>
+       
+          <Link to="/student/booking" >Book my Class</Link>
+          <Link to="/student/reschedule" >My Booked Classes</Link>
         </>
       )}
 
       {userRole === 'instructor' && (
         <>
-          <Link to="/instructor/booking">Schedule my Services</Link>
-          <Link to="/instructor/students">Students Booked</Link>
+          <Link to="/instructor/booking" >Schedule my Services</Link>
+          <Link to="/instructor/students" >Students Booked</Link>
+            
         </>
       )}
 

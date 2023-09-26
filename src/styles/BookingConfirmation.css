@@ -1,0 +1,29 @@
+.classbooked {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #a4fcc6;
+    color: black;
+    font-size: 20px;
+  
+  }
+
+
+  
+  .classbooked h2, .classbooked
+  p {
+    padding: 10px;
+    border-radius: 20px;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    margin: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .classbooked {
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    }
+  }

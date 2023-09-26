@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/StudentReschedule.css';
 
 function EditFormBookedClass(props) {
-  const { student, onSave, onCancel } = props;
+  const { student, onSave, onCancel, onDelete } = props;
   const [editableStudent, setEditableStudent] = useState({ ...student });
 
   const handleSubmit = (e) => {
@@ -12,6 +12,10 @@ function EditFormBookedClass(props) {
 
   const cancelEdit = () => {
     onCancel();
+  };
+
+  const handleDelete = () => {
+    onDelete(student._id); // Pass the student ID to the onDelete function
   };
 
   return (
@@ -65,6 +69,9 @@ function EditFormBookedClass(props) {
         <button type="submit">Save</button>
         <button data-testid="cancelbtn" type="button" onClick={cancelEdit}>
           Cancel
+        </button>
+        <button data-testid="deletebtn" type="button" onClick={handleDelete}>
+          Delete
         </button>
       </form>
     </div>

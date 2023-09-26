@@ -19,13 +19,21 @@ nav {
   text-align: center;
 }
 
-nav a {
-  font-weight: bold;
-  color: #42b983;
- 
+a {
+  text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px;
 }
-nav a:active {
-  color: #ffffff;
+a:hover {
+  color: #001413;
+  background-color: #ebdb04;
+}
+
+.active-link {
+  color: #ff5722;
+  font-weight: bold; 
 }
 
 

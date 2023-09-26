@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/BookingConfirmation.css';
 
 function BookingConfirmation({ bookingDetails }) {
   return (

@@ -5,23 +5,26 @@ import InstructorDashboard from './components/InstructorDashboard';
 import StudentBooking from './components/StudentBooking';
 import WelcomeBooking from './components/WelcomeBooking';
 import StudentBookedClass from './components/StudentBookedClass';
+import NotFound from './components/NotFound';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchInstructorClasses } from './stores/actions';
 
 const App = () => {
   const dispatch = useDispatch();
-  const instructorClasses = useSelector((state) => state.instructor.availableClasses);
+  // const instructorClasses = useSelector((state) => state.instructor.availableClasses);
 
   useEffect(() => {
     dispatch(fetchInstructorClasses());
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log('instructorClasses', instructorClasses);
-  }, [instructorClasses]);
+  // useEffect(() => {
+  //   // console.log('instructorClasses', instructorClasses);
+  // }, [instructorClasses]);
 
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const userRole = useSelector((state) => state.auth.role);
+
+
 
   return (
     <Router>
@@ -44,7 +47,7 @@ const App = () => {
           />
           <Route
             path="/instructor/booking"
-            element={userRole === 'instructor' ? <InstructorDashboard /> : <Navigate to="/" />}
+            element={userRole === 'instructor' ? <InstructorDashboard /> : <Navigate to="</>" />}
           />
           <Route
             path="/instructor/students"
@@ -58,6 +61,7 @@ const App = () => {
             path="/student/reschedule"
             element={userRole === 'student' ? <StudentBookedClass /> : <Navigate to="/" />}
           />
+            <Route path="*" element={<NotFound />} /> {/* Catch-all route for Not Found */}
         </Routes>
       </div>
     </Router>

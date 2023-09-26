@@ -26,10 +26,16 @@ const instructorSlice = createSlice({
     addRescheduledClass: (state, action) => {
       state.rescheduledClasses.push(action.payload);
     },
+    removeBookedClassById: (state, action) => {
+      state.bookedClasses = state.bookedClasses.filter((item) => item._id !== action.payload);
+    },
+
   },
+
 });
 
+
 // Export actions
-export const { setAvClasses, setRescheduled, addBookedClass, updateClass, addRescheduledClass } = instructorSlice.actions;
+export const { setAvClasses, setRescheduled, addBookedClass, updateClass, addRescheduledClass, removeBookedClassById } = instructorSlice.actions;
 // Export the reducer
 export default instructorSlice.reducer;

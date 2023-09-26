@@ -17,4 +17,20 @@
     margin: 10px;
   }
 
- 
+ @media screen and (max-width: 768px) {
+.editform{
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+  .editform form {
+    flex-direction: column;
+  }
+  .editform form input {
+    width: 80%;
+  }
+  .editform form button {
+    width: 80%;
+    margin: 5px 0;
+  }
+}

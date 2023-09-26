@@ -1,7 +1,50 @@
+.bookingclass {
+    text-align: center;
+}
+
+#reset{
+    margin: 30px 0;
+    padding: 10px;
+    border: 3px solid #005670;
+    background-color: #ffffff;
+    color: #005670;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 .myclasses {
     background: #005670;
     padding: 20px;
     color: #a4fcc6;
-    font-weight: 200;
+    font-weight: 500;
     font-size: 20px;
+    
+}
+
+.myclasses .dropdown{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    align-items: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+@media (max-width: 768px) {
+    .myclasses .dropdown {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        text-align: center;
+        min-width: 250px;
+    }
+
+    .time-container {
+        margin: auto;
+        grid-column: 1;
+    }
+  
 }

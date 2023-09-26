@@ -1,3 +1,8 @@
+.mybookings h2{
+  text-align: center;
+  font-size: 40px;
+}
+
 .studentsinfo {
   display: flex;
   flex-wrap: wrap;
@@ -19,5 +24,27 @@
   }
 
   .studentdetails p{
+    font-weight: 500;
+    margin: 10px;
+  }
+
+  .studentdetails button {
+    padding: 8px;
+    border: 3px solid #a4fcc6;
+    background-color: rgb(0, 86, 112);
+    color: #fdfdfd;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #a4fcc6;
+      color: rgb(0, 86, 112);
+    }
+  }
+
+  .validation-message{
+    text-align: center;
+    font-size: 20px;
+    color: #f70e0e;
     font-weight: 500;
   }

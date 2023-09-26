@@ -8,7 +8,7 @@ const InstructorServicesDisplay = () => {
   const availableClasses = useSelector((state) => state.instructor.availableClasses);
 
   return (
-    <div>
+    <div className='avaiServices'>
       <h2>My Available Services</h2>
      
     <div className="myclassesdisplay">

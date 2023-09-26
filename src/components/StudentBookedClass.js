@@ -3,14 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import EditFormBookedClass from './StudentReschedule';
 import { fetchBookedClasses, updateBookedClass } from '../stores/actions';
 import { addRescheduledClass } from '../stores/instructorStore';
+import { removeBookedClassById } from '../stores/instructorStore';
 import '../styles/StudentBookedClass.css';
+
 
 function MyBookings() {
   const dispatch = useDispatch();
   const [selectedStudent, setSelectedStudent] = useState(null);
   const bookedClasses = useSelector((state) => state.bookedClasses.bookedClasses);
   const rescheduledClasses = useSelector((state) => state.instructor.rescheduledClasses);
-
+  const [validationMessage, setValidationMessage] = useState('');
   // console.log(bookedClasses);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -35,6 +37,29 @@ function MyBookings() {
     setSelectedStudent(null);
   };
 
+  const deleteStudentClass = async (studentId) => {
+    try {
+      const response = await fetch(`http://localhost:3000/instructor/students/${studentId}`, {
+        method: 'DELETE',
+      });
+  
+      if (response.ok) {
+        dispatch(removeBookedClassById(studentId));
+        setValidationMessage((prevMessages) => ({
+          ...prevMessages,
+          [studentId]: "Class deleted successfully, please upload the page!",
+        }));
+
+        console.log('Student deleted successfully');
+      } else {
+        console.error('Error deleting student:', response.statusText);
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  };
+  
+
   const updateStudentClass = async (updatedStudent) => {
     try {
       const { _id, ...updatedStudentDataWithoutId } = updatedStudent;
@@ -52,7 +77,7 @@ function MyBookings() {
 
       if (response.ok) {
        
-        dispatch(addRescheduledClass(updatedStudent)); // Dispatch the new action to add to rescheduledClasses
+        dispatch(addRescheduledClass(updatedStudent)); 
         dispatch(updateBookedClass(updatedStudent));
         console.log(rescheduledClasses);
         setSelectedStudent(null);
@@ -65,7 +90,7 @@ function MyBookings() {
   };
 
   return (
-    <div>
+    <div className='mybookings'>
     <h2>My Bookings</h2>
     <div className="studentsinfo">
       {isLoading ? (
@@ -83,12 +108,18 @@ function MyBookings() {
 
               <button onClick={() => editBooking(student)}>Reschedule My Class</button>
 
+              {validationMessage[student._id] && (
+                  <div className="validation-message">{validationMessage[student._id]}</div>
+                )}
+
+
               {selectedStudent === student && (
                 <EditFormBookedClass
                   bookedClasses={bookedClasses}
                   student={student}
                   onSave={updateStudentClass}
                   onCancel={cancelEdit}
+                  onDelete={deleteStudentClass}
                 />
               )}
             </div>

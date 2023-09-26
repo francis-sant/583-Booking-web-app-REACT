@@ -12,8 +12,9 @@
     color: #fff;
 }
 
- label {
+.insertForm label {
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .insertForm form {
@@ -27,11 +28,11 @@
 
   .insertForm input {
     margin-bottom: 10px;
-    padding: 15px;
+    padding: 11px;
     border-radius: 20px;
   }
 
-  button {
+  .insertForm button {
     margin: 10px;
     padding: 10px;
     border: 3px solid #a4fcc6;
@@ -45,4 +46,11 @@
       background-color: #a4fcc6;
       color: rgb(0, 86, 112);
     }
+  }
+
+  .successMessage {
+    color: #00fd21;
+    font-size: 28px;
+    font-weight: 600;
+    background-color: black;
   }
