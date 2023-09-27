@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBookedClass } from '../stores/instructorStore'; 
-
-
-
+import InstructorInput from './InstructorInput';
+import DateTimeInput from './DateTimeInput';
 
 function TeacherForm() {
   const dispatch = useDispatch(); 
@@ -91,82 +90,64 @@ function TeacherForm() {
 
   const clearForm = () => {
     setInstructor("");
-  setType("");
-  setName("");
-  setModality("");
-  setDateTimes([{ date: '', startTime: '', endTime: '' }]); 
-  setDuration("");
-  setBreaks("");
-  setPrice("");
-      };
+    setType("");
+    setName("");
+    setModality("");
+    setDateTimes([{ date: '', startTime: '', endTime: '' }]);
+    setDuration("");
+    setBreaks("");
+    setPrice("");
+  };
 
   return (
     <div className="App">
       <form className="insertForm" onSubmit={submitSchedule}>
-        <label htmlFor="teacher">Instructor Name:</label>
-        <input type="text" value={instructor} onChange={(e) => setInstructor(e.target.value)} required id="teacher" />
+        <InstructorInput value={instructor} onChange={(e) => setInstructor(e.target.value)} />
 
         <label htmlFor="type">Type of Class:</label>
         <input type="text" value={type} onChange={(e) => setType(e.target.value)} id="type" required />
 
-        <label htmlFor="type">Service Name:</label>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+        <label htmlFor="name">Service Name:</label>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} id="name" required />
 
-        <label htmlFor="type">Modality: Online, Class</label>
-        <input type="text" value={modality} onChange={(e) => setModality(e.target.value)} required />
+        <label htmlFor="modality">Modality: Online, Class</label>
+        <input type="text" value={modality} onChange={(e) => setModality(e.target.value)} id="modality" required />
 
         <fieldset>
           <legend>Date and Time Selection</legend>
           {dateTimes.map((dateTime, index) => (
-            <div key={index}>
-              <label>Date:</label>
-              <input
-                type="date"
-                value={dateTime.date}
-                onChange={(e) => handleDateChange(index, e.target.value)}
-                required
-              />
-              <label>Start Time:</label>
-              <input
-                type="time"
-                value={dateTime.startTime}
-                onChange={(e) => handleStartTimeChange(index, e.target.value)}
-                required
-              />
-              <label>End Time:</label>
-              <input
-                type="time"
-                value={dateTime.endTime}
-                onChange={(e) => handleEndTimeChange(index, e.target.value)}
-                required
-              />
-              <button type="button" onClick={() => removeDateTime(index)}>Remove</button>
-              <button type="button" onClick={addDateTime}>Add Date and Time</button>
-            </div>
+            <DateTimeInput
+              key={index}
+              dateTime={dateTime}
+              onDateChange={(e) => handleDateChange(index, e.target.value)}
+              onStartTimeChange={(e) => handleStartTimeChange(index, e.target.value)}
+              onEndTimeChange={(e) => handleEndTimeChange(index, e.target.value)}
+              onRemove={() => removeDateTime(index)}
+              addDateTime={addDateTime} 
+            />
           ))}
         </fieldset>
 
-        <label htmlFor="type">Duration - in minutes</label>
-        <input type="number" value={duration} onChange={(e) => setDuration(e.target.value)} required />
+        <label htmlFor="duration">Duration - in minutes</label>
+        <input type="number" value={duration} onChange={(e) => setDuration(e.target.value)} id="duration" required />
 
-        <label htmlFor="type">Breaks - in minutes</label>
-        <input type="number" value={breaks} onChange={(e) => setBreaks(e.target.value)} required />
+        <label htmlFor="breaks">Breaks - in minutes</label>
+        <input type="number" value={breaks} onChange={(e) => setBreaks(e.target.value)} id="breaks" required />
 
         <label htmlFor="price">Price</label>
-        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} required />
+        <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} id="price" required />
 
         <button type="submit">Add My Service</button>
-
-        
       </form>
 
       {successMessage ? (
-          <div className="successMessage">{successMessage}</div>
-        ) : (
-          <div>{failMessage}</div>
-        )}
+        <div className="successMessage">{successMessage}</div>
+      ) : (
+        <div>{failMessage}</div>
+      )}
     </div>
   );
 }
 
 export default TeacherForm;
+

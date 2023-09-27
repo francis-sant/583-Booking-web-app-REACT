@@ -61,7 +61,7 @@ const App = () => {
             path="/student/reschedule"
             element={userRole === 'student' ? <StudentBookedClass /> : <Navigate to="/" />}
           />
-            <Route path="*" element={<NotFound />} /> {/* Catch-all route for Not Found */}
+            <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
