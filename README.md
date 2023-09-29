@@ -1,4 +1,37 @@
-# Getting Started with Create React App
+# 582-project3-REACT
+
+## Service Booking System
+
+This project is a web application that allows users to book and manage services offered by instructors. It provides two main user roles: Instructors and Students. Instructors can create and manage their services, while students can book and manage their class bookings.
+
+## Features
+
+### Welcome Page
+- Role selection (Instructor or Student).
+- Routing based on user role.
+
+### Teacher Schedule Form
+- Instructors can add and schedule their services.
+- Dynamic addition and removal of date and time slots.
+- Form validation for required fields.
+- Submission of service details to the server.
+- Success and error messages.
+
+### Student Class Booking
+- Display of booked classes.
+
+### Student Class Rescheduling
+- Rescheduling of classes.
+
+
+### My Classes Display
+- Instructors can view a list of their available classes.
+- Real-time inclusion of instructor's classes.
+
+
+# Project setup
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
